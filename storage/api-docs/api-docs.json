@@ -1,0 +1,48 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "CoolApi",
+        "description": "CoolApi description",
+        "contact": {
+            "email": "khanabeev@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/add-message": {
+            "post": {
+                "tags": [
+                    "message"
+                ],
+                "summary": "Send new message to static Email",
+                "operationId": "addMessage",
+                "parameters": [
+                    {
+                        "name": "content",
+                        "in": "query",
+                        "description": "Content of the message that you pass in body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JsonResponse"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
