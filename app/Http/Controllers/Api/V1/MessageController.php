@@ -14,7 +14,7 @@ class MessageController extends Controller
         $validator = $this->validateMessage($request->only('content'));
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(),400);
+            return response()->json($validator->errors(), 400);
         }
 
         Message::create($request->only('content'));
